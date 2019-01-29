@@ -429,6 +429,7 @@ module.exports = {
       }
     } else if (type === 'body-footer') {
       let response = null;
+      // Looks like latest ember addons only from dependencies
       let emberPowerSelect = this.addons.filter(function(addon) {
         return addon.name === 'ember-power-select';
       })[0];
