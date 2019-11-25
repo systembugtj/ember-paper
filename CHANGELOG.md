@@ -1,5 +1,27 @@
 # Ember Paper Changelog
 
+### 1.0.0-beta.26
+- [f117ca0](https://github.com/miguelcobain/ember-paper/commit/f117ca0d4c6395a8fc941552b2a8a9492e157505) fix paper-input not clearing text
+
+### 1.0.0-beta.25
+- [#1073](https://github.com/miguelcobain/ember-paper/issues/1073) fixed paper-autocomplete options highlighting style
+- [2652581](https://github.com/miguelcobain/ember-paper/commit/265258171b44101ec2ad8566b4e7db2085f75071) update angular material styles
+- [#1083](https://github.com/miguelcobain/ember-paper/pull/1083) Add md-input-has-placeholder class to input with placeholder
+- [#1089](https://github.com/miguelcobain/ember-paper/pull/1089) Prevent submitting a form when clicking clear in paper-autocomplete
+- [#1076](https://github.com/miguelcobain/ember-paper/pull/1076) Fix paper-autocomplete value being overriden when changed
+- [c9022e9](https://github.com/miguelcobain/ember-paper/commit/c9022e90f5b461cdd18a204e16b2d477d5d74928) clamp tooltip position to the visible area of the viewport. closes [#1041](https://github.com/miguelcobain/ember-paper/issues/1041)
+- [#1084](https://github.com/miguelcobain/ember-paper/pull/1084) Add guard against missing original.parentNode (fixes backdrop error in tests)
+
+### 1.0.0-beta.24
+- [#1048](https://github.com/miguelcobain/ember-paper/pull/1048) fix paper-tabs issues (fixes [#858](https://github.com/miguelcobain/ember-paper/issues/858), [#759](https://github.com/miguelcobain/ember-paper/issues/759), [#893](https://github.com/miguelcobain/ember-paper/issues/893))
+- [6a1fff3](https://github.com/miguelcobain/ember-paper/commit/6a1fff377059a6e396ae0af28d46a38febd3a2b3) depend on `angular-material-styles` npm package instead of `angular-material-source` git dependency (fixes [#1069](https://github.com/miguelcobain/ember-paper/issues/1069))
+
+### 1.0.0-beta.23
+- [#1050](https://github.com/miguelcobain/ember-paper/pull/1050) Fix paper select click-catcher to call dropdown.actions.close on click
+- [55858e8](https://github.com/miguelcobain/ember-paper/commit/55858e8d7a94106c4d88fe1969276c075e136cf9) add nodelist forEach polyfill to fix paper-dialogs on IE11  (fixes [1058](https://github.com/miguelcobain/ember-paper/issues/1058))
+- [#1064](https://github.com/miguelcobain/ember-paper/pull/1064) support module unification blueprint
+- [ebbeaef](https://github.com/miguelcobain/ember-paper/commit/ebbeaefc10687aa76cd667da5a65bda6b6c8639e) fix paper-switch not working when used in paper-item (fixes [#1051](https://github.com/miguelcobain/ember-paper/issues/1051))
+
 ### 1.0.0-beta.22
 - [444c762](https://github.com/miguelcobain/ember-paper/commit/444c7629f8fe6b137cffd67a2f5002558eaec241) bump ember-composability-tools to remove `new A()` deprecation
 - [#1044](https://github.com/miguelcobain/ember-paper/pull/1044) ensure `parentNode` is not null in translate3d

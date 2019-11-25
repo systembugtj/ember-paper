@@ -1,7 +1,7 @@
 module.exports = {
   root: true,
   parserOptions: {
-    ecmaVersion: 2017,
+    ecmaVersion: 2018,
     sourceType: 'module'
   },
   plugins: [
@@ -16,6 +16,7 @@ module.exports = {
     browser: true
   },
   rules: {
+    'ember/no-jquery': 'error',
     'ember-suave/require-access-in-comments': 'off'
   },
   overrides: [

@@ -20,6 +20,7 @@ const componentDependencies = {
       'components/autocomplete/autocomplete-theme.scss'
     ],
     dependencies: [
+      'paper-autocomplete-trigger-container',
       'paper-autocomplete-trigger',
       'paper-autocomplete-options',
       'paper-autocomplete-highlight',
@@ -370,8 +371,31 @@ const componentDependencies = {
     ]
   }
 };
+
 module.exports = {
   name: require('./package').name,
+
+  options: {
+    polyfills: {
+      'polyfill-nodelist-foreach': {
+        files: ['index.js'],
+        // compatibility from https://developer.mozilla.org/en-US/docs/Web/API/NodeList/forEach
+        browsers: ['ie > 0', 'chrome < 52', 'ff < 50', 'opera < 38', 'safari < 10', 'edge < 16', 'android < 51', 'and_chr < 51', 'and_ff < 50', 'ios_saf < 10', 'Samsung < 5']
+      },
+      'classlist-polyfill': {
+        files: ['src/index.js'],
+        caniuse: 'classlist'
+      },
+      'element-closest': {
+        files: ['browser.js'],
+        caniuse: 'element-closest'
+      },
+      'matchmedia-polyfill': {
+        files: ['matchMedia.js'],
+        caniuse: 'matchmedia'
+      }
+    }
+  },
 
   included() {
     this._super.included.apply(this, arguments);
@@ -395,7 +419,6 @@ module.exports = {
     app.import('vendor/ember-paper/register-version.js');
     app.import('vendor/hammerjs/hammer.js');
     app.import('vendor/propagating-hammerjs/propagating.js');
-
   },
 
   config() {
@@ -496,7 +519,7 @@ module.exports = {
 
     let filteredScssFiles = this.addStyles(coreScssFiles) || coreScssFiles;
 
-    let angularScssFiles = new Funnel(this.pathBase('angular-material-source'), {
+    let angularScssFiles = new Funnel(this.pathBase('angular-material-styles'), {
       files: filteredScssFiles,
       srcDir: '/src',
       destDir: 'angular-material',
